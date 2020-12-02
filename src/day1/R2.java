@@ -11,7 +11,6 @@ public class R2 {
     public int getTriplet() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day1input.txt");
         List<String> input = Files.readAllLines(path);
-        // sort data
         for (int i = 0; i < input.size(); i++) {
             for (int j = i + 1; j < input.size(); j++) {
                 for (int k = j + 1; k < input.size(); k++) {
