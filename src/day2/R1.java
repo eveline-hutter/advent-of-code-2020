@@ -8,7 +8,7 @@ import java.util.List;
 
 public class R1 {
 
-    public int getValidPasswords() throws IOException {
+    public static int getValidPasswords() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day2input.txt");
         List<String> input = Files.readAllLines(path);
         int validPasswords = 0;
@@ -31,7 +31,7 @@ public class R1 {
         return validPasswords;
     }
     
-    public int[] getMinMaxCharPos(String string) {
+    public static int[] getMinMaxCharPos(String string) {
         int[] minMax = new int[3];
         String substringMin = "";
         String substringMax = "";
@@ -66,14 +66,11 @@ public class R1 {
     }
         
     public static void main(String[] args) {
-        R1 r1 = new R1();
-        int solution = 0;
         try {
-            solution = r1.getValidPasswords();
+            System.out.println(getValidPasswords());
         } catch (IOException e) {
             System.out.println(e);
         }
-        System.out.println(solution);
     }
 
 }

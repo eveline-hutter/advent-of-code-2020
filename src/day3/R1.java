@@ -8,7 +8,7 @@ import java.util.List;
 
 public class R1 {
 
-    public int getNoOfTrees() throws IOException {
+    public static int getNoOfTrees() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day3input.txt");
         List<String> input = Files.readAllLines(path);
         int checkpoint = 3;
@@ -23,13 +23,10 @@ public class R1 {
     }
 
     public static void main(String[] args) {
-        R1 r1 = new R1();
-        int solution = 0;
         try {
-            solution = r1.getNoOfTrees();
+            System.out.println(getNoOfTrees());
         } catch (IOException e) {
             System.out.println(e);
         }
-        System.out.println(solution);
     }
 }

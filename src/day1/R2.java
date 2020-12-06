@@ -8,7 +8,7 @@ import java.util.List;
 
 public class R2 {
 
-    public int getTriplet() throws IOException {
+    public static int getTriplet() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day1input.txt");
         List<String> input = Files.readAllLines(path);
         for (int i = 0; i < input.size(); i++) {
@@ -29,13 +29,10 @@ public class R2 {
     }    
 
     public static void main(String[] args) {
-        R2 r2 = new R2();
-        int solution = 0;
         try {
-            solution = r2.getTriplet();
+            System.out.println(getTriplet());
         } catch (IOException e) {
             System.out.println(e);
         }
-        System.out.println(solution);
     }
 }

@@ -8,7 +8,7 @@ import java.io.*;
 
 public class R1 {
 
-    public int getPair() throws IOException {
+    public static int getPair() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day1input.txt");
         List<String> input = Files.readAllLines(path);
         for (int i = 0; i < input.size(); i++) {
@@ -25,13 +25,10 @@ public class R1 {
     }    
 
     public static void main(String[] args) {
-        R1 r1 = new R1();
-        int solution = 0;
         try {
-            solution = r1.getPair();
+            System.out.println(getPair());
         } catch (IOException e) {
             System.out.println(e);
         }
-        System.out.println(solution);
     }
 }

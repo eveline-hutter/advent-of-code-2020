@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.sun.javafx.collections.SetAdapterChange;
-
 public class R2 {
 
     public static int getSeatID() throws IOException {
