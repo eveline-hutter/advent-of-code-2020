@@ -124,17 +124,10 @@ public class R2 {
                     }
                 }
                 String ecl = pw.substring(i + 4, end);
-//                if (!ecl.matches("(amb)(blu)(brn)(gry)(grn)(hzl)(oth)")) {
-//                    System.out.println("ecl wrong: " + ecl);
-//                    return false;
-//                }
-                if (ecl.equals("amb") || ecl.equals("blu") || ecl.equals("brn") ||
-                    ecl.equals("gry") || ecl.equals("grn") || ecl.equals("hzl") || ecl.equals("oth")) {
-                    continue;
-                } else {
+                if (!ecl.matches("amb|blu|brn|gry|grn|hzl|oth")) {
                     System.out.println("ecl wrong: " + ecl);
                     return false;
-                }
+                }                
             } else if (code.equals("pid:")) {
                 int end = pw.length() - 1;
                 for (int j = i + 4; j < pw.length(); j++) {
