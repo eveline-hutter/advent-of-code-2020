@@ -15,12 +15,12 @@ public class R2 {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day13input.txt");
         List<String> input = Files.readAllLines(path);
         String[] busses = input.get(1).split(",");
-        Map<Integer, Integer> busMap = new HashMap<>(); // map with bus no. and offset mod busNo
-        BigInteger M = BigInteger.ONE;     
+        Map<Integer, Integer> busMap = new HashMap<>(); // map with bus no. and negative offset mod busNo
+        BigInteger M = BigInteger.ONE;    // M = product of all bus numbers, needed for chinese remainder
         for (int i = 0; i < busses.length; i++) {
             if (busses[i].charAt(0) != 'x') {
                 Integer busNo = Integer.valueOf(busses[i]);
-                busMap.put(busNo, (busNo - i) % busNo); // timestamp === negative offset mod busNo
+                busMap.put(busNo, (busNo - i) % busNo);
                 M = M.multiply(BigInteger.valueOf(busNo));
             }
         }
