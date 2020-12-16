@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * class that saves all occurrences of a number in a list (probably needed for R2)
+ */
 public class R1 {
 
     public static int get2020thNo(int[] startingNumbers) {
