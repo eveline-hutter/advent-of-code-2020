@@ -6,15 +6,18 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * class that uses TreeMap for the floor layout
+ */
 public class R1 {
 
-    public static TreeMap<Integer, ArrayList<Integer>> getBlackTiles() throws IOException {
+    public static SortedMap<Integer, List<Integer>> getBlackTiles() throws IOException {
         Path path = Paths.get("D:\\Documents\\GitHub\\advent-of-code-2020\\data\\day24input.txt");
         List<String> input = Files.readAllLines(path);
-        TreeMap<Integer, ArrayList<Integer>> blackTiles = new TreeMap<>();
+        SortedMap<Integer, List<Integer>> blackTiles = new TreeMap<>();
         // process direction instructions
         for (String instruction : input) {            
             int row = 0;
@@ -70,7 +73,7 @@ public class R1 {
             Integer keyRow = Integer.valueOf(row);
             Integer valueCol = Integer.valueOf(col);
             if (!blackTiles.containsKey(keyRow)) {
-                ArrayList<Integer> valuesForKeyCol = new ArrayList<>();
+                List<Integer> valuesForKeyCol = new ArrayList<>();
                 valuesForKeyCol.add(valueCol);
                 blackTiles.put(keyRow, valuesForKeyCol); // flip tile from white to black                
             } else {
@@ -87,10 +90,10 @@ public class R1 {
 
     public static void main(String[] args) {
         try {
-            TreeMap<Integer, ArrayList<Integer>> blackTiles = getBlackTiles();
+            SortedMap<Integer, List<Integer>> blackTiles = getBlackTiles();
             // count number of black tiles
             int noOfBlackTiles = 0;
-            for (ArrayList<Integer> valuesForKeyRow : blackTiles.values()) {
+            for (List<Integer> valuesForKeyRow : blackTiles.values()) {
                 noOfBlackTiles += valuesForKeyRow.size();
             }
             System.out.println(noOfBlackTiles);

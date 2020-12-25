@@ -1,17 +1,18 @@
 package day24;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.SortedMap;
 
+/**
+ * class that uses arrays instead of maps for the 100 iterations of the floor layout
+ */
 public class R2 {
 
     public static int getNoOfBlackTiles() throws IOException {
-        TreeMap<Integer, ArrayList<Integer>> blackTilesInit = R1.getBlackTiles();
+        SortedMap<Integer, List<Integer>> blackTilesInit = R1.getBlackTiles();
         int minRow = blackTilesInit.firstKey();
         int maxRow = blackTilesInit.lastKey();
         int minCol = Integer.MAX_VALUE;
@@ -46,7 +47,7 @@ public class R2 {
             }
             for (int row = 0; row < blackTilesOld.length; row++) {
                 // even rows (in blackTilesInit(R1)!) can only contain even columns, odd rows can only contain odd columns
-                /** To have the code work for the example input, change 0 and 1 in the following
+                /*  To have the code work for the example input, change 0 and 1 in the following
                  *  line, because example input has 7 rows (first being -3 in blackTilesInit == odd)
                  *  and puzzle input has 37 rows (first being -18 in blackTilesInit = even).
                  */
